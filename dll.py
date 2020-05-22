@@ -19,3 +19,9 @@ if hasattr(pe, 'DIRECTORY_ENTRY_IMPORT'):
             else:
                 print("\tord {}".format(str(imp.ordinal)))
         print("\n")
+
+if hasattr(pe, 'DIRECTORY_ENTRY_EXPORT'):
+    for exp in pe.DIRECTORY_ENTRY_EXPORT.symbols:
+        print('{}'.format(exp.name))
+
+print("\nEnd ")
