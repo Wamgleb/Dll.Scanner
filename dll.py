@@ -24,4 +24,12 @@ if hasattr(pe, 'DIRECTORY_ENTRY_EXPORT'):
     for exp in pe.DIRECTORY_ENTRY_EXPORT.symbols:
         print('{}'.format(exp.name))
 
-print("\nEnd ")
+print("\n")
+
+for section in pe.sections:
+    print("{0} {1} {2} {3}".format (section.Name,
+                           hex(section.VirtualAddress),
+                           hex(section.Misc_VirtualSize),
+                           section.SizeOfRawData))
+print("\n")
+print('\t--------Copleted!--------\n')
